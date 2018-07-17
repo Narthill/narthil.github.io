@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+    以已有的知识，建立一个blog的模型
+    用以记录一些东西，但更重要的是用以抒发情绪
+    此为首页，主要放置介绍，截取的文章概要，以及导航
+-->
+
+<html>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link href="css/style.css" rel="stylesheet">-->
+    <style>
+        .test {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="test" id="test" onclick="go()">
+    </div>
+</body>
+<script>
+    var sum = 0;
+    function go() {
+        setTimeout("dong();", 100);
+    }
+
+    function dong() {
+        var test = document.getElementById('test');
+        var top = test.offsetTop;
+        var left = test.offsetLeft;
+        // test.style.top=(parseInt(top)+1)+'px';
+        test.style.left = (parseInt(left) + 1) + 'px';
+        if (sum < 1000) {
+            setTimeout("dong();", 1);
+            sum++;
+        } else {
+            sum = 0;
+        }
+    }
+</script>
+
+</html>
